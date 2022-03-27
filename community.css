@@ -8,20 +8,63 @@
     height: 100vh;  
     background-size: cover;  
     background-image:url(/รูปภาพ/BG.jpg); 
+    position: relative;
+    padding-bottom: 57px;
+    min-height: 100vh;
 }
 
 .table-menu{
     font-family: Arial, Helvetica, sans-serif;  
 }
+.BGcontent{
+    padding: 30px 30px;
+    margin: 20px 20px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.63);
+}
+.content01{
+    background-color: antiquewhite;
+    border-radius: 30px;
+    padding: 30px 0;
+    margin: 10px 20px;
+}
 
-.content-index{ 
-    height: 100%; 
+.content{ 
+    color: blueviolet;
+    height: 90%; 
     display: flex; 
     align-items: center;
     justify-content:center; 
     flex-direction: column; 
-    margin: 40px 40px;
-    transform: translateY(20%); 
+    padding: 30px 30px;
+    margin: 20px 20px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: #ffc000;
+}
+
+.content-contact a img{
+    cursor: pointer; 
+    width: 5%; 
+    padding: 5px 5px;
+    transition: transform 0.3s;
+}
+
+.content-contact a img:hover{
+    transform: scale(1.2);
+}
+
+.content p a{
+    text-decoration: none;
+    color: blueviolet;
+}
+
+.content h1{
+    margin: 10px 0;
+    padding: 15px 14px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    background-color: antiquewhite;
 }
 
 .btn{
@@ -34,13 +77,12 @@
     padding: 10px 25px;
     border-radius: 30px;
     transition: transform 0.3s;
-    margin: 0 10px;
+    margin: 20px 10px;
 }
 
 .btn:hover{
     transform: scale(1.2);
-    background-color: #ffc000; 
-    box-shadow: 0 0 5px #ffc000, 
-                0 0 20px #ffc000,
-                0 0 50px #ffc000;
+    background-color: #ff004c; 
+    box-shadow: 0 0 5px #ff78a0, 
+                0 0 20px #ff004c;
 }
