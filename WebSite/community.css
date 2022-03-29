@@ -46,6 +46,7 @@
 
 .content a img:hover{
     transform: scale(1.2);
+    transition: transform 0.3s;
 }
 
 .content-contact a img{

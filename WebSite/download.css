@@ -37,6 +37,28 @@
     margin: 0 10px;
 }
 
+th{
+    width: 30%; 
+    vertical-align: top;
+}
+
+.Video1{
+    background-color: rgba(0, 0, 0, 0.644);
+    padding: 20px 20px;
+    border-radius: 30px;
+}
+
+.Video2{
+    background-color: rgba(0, 0, 0, 0.644);
+    padding: 20px 20px;
+    border-radius: 30px;
+}
+
+.Download a img:hover{
+    transform: scale(1.2);
+    transition: transform 0.3s;
+}
+
 .btn:hover{
     transform: scale(1.2);
     background-color: #ffc000; 
