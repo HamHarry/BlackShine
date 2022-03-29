@@ -71,45 +71,49 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        private bool TryMove(Vector2 direction) //ฟังก์ชั่น movement
+    private bool TryMove(Vector2 direction) //ฟังก์ชั่น movement
+    {
+        /*<------------------------------------------------------MoveMent--------------------------------------------------------->*/
+        //เมื่อมีข้อมูลการเคลื่อนไหวจาก'OnMove'แล้ว ก็นำไปคูณกับ "ความเร็ว"และ"เวลา" เพื่อหาว่าตัวละครเราเครื่อนที่เร็วแค่ไหนและไปทิศไหน
+        if (direction != Vector2.zero)
         {
-            /*<------------------------------------------------------MoveMent--------------------------------------------------------->*/
-            //เมื่อมีข้อมูลการเคลื่อนไหวจาก'OnMove'แล้ว ก็นำไปคูณกับ "ความเร็ว"และ"เวลา" เพื่อหาว่าตัวละครเราเครื่อนที่เร็วแค่ไหนและไปทิศไหน
-            if (direction != Vector2.zero)
-            {
-                //ตรวจสอบการชน ของraycast
-                int count = rb.Cast(
-                direction,   //ทิศทาง XY
-                movementFiller,  //ตัวกรองการเคลื่อนไหว ซึ่งจะกดหนดสิ่งที่ raycast นี้ชนได้
-                castCollisions,  //เก็บผลลัพธ์ของ raycast 
-                moveSpeed * Time.fixedDeltaTime + collisionOffset); //ถ้า raycast ชนกัน จะได้Outputออกมาเป็น 1
+            //ตรวจสอบการชน ของraycast
+            int count = rb.Cast(
+            direction,   //ทิศทาง XY
+            movementFiller,  //ตัวกรองการเคลื่อนไหว ซึ่งจะกดหนดสิ่งที่ raycast นี้ชนได้
+            castCollisions,  //เก็บผลลัพธ์ของ raycast 
+            moveSpeed * Time.fixedDeltaTime + collisionOffset); //ถ้า raycast ชนกัน จะได้Outputออกมาเป็น 1
 
-                //ตรงนี้จึงสร้างเงื่อนไขมาลองรับว่าหากไม่พบการชนก็จะให้เคลื่อนที่ต่อไปได้
-                if (count == 0)
-                {
-                    rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime); //ตำแหน่งของRigidbody + (ทิศทาง * ความเร็ว * เวลา) = ระยะทาง
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+            //ตรงนี้จึงสร้างเงื่อนไขมาลองรับว่าหากไม่พบการชนก็จะให้เคลื่อนที่ต่อไปได้
+            if (count == 0)
+            {
+                rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime); //ตำแหน่งของRigidbody + (ทิศทาง * ความเร็ว * เวลา) = ระยะทาง
+                return true;
             }
             else
             {
-                // Can't move if there's no direction to move in
                 return false;
             }
-
-            /*<------------------------------------------------------------------------------------------------------------------------>*/
         }
-
-
-
-        void OnMove(InputValue movementValue)  //รับค่า XY จากแป้นพิมพ์ และเรียกใช้ movementValue
+        else
         {
-            movementInput = movementValue.Get<Vector2>(); //เอาค่า XY ที่ได้จากแป้นพิมพ์ มาเก็บในตัวแปร movementInput
+            // Can't move if there's no direction to move in
+            return false;
         }
 
+        /*<------------------------------------------------------------------------------------------------------------------------>*/
+    }
+
+
+
+    void OnMove(InputValue movementValue)  //รับค่า XY จากแป้นพิมพ์ และเรียกใช้ movementValue
+    {
+        movementInput = movementValue.Get<Vector2>(); //เอาค่า XY ที่ได้จากแป้นพิมพ์ มาเก็บในตัวแปร movementInput
+    }
+        
+    void OnFire()
+    {
+        animator.SetTrigger("swordAttack");
+    }
 
  }
