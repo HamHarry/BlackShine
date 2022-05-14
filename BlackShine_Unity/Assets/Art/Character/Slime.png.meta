@@ -17,6 +17,12 @@ TextureImporter:
   - first:
       213: -518775653469539935
     second: Slime_4
+  - first:
+      213: -1066590377825042928
+    second: Slime_5
+  - first:
+      213: 5262606648162847603
+    second: Slime_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -205,8 +211,8 @@ TextureImporter:
       name: Slime_4
       rect:
         serializedVersion: 2
-        x: 96
-        y: 192
+        x: 128
+        y: 224
         width: 32
         height: 32
       alignment: 0
@@ -218,6 +224,48 @@ TextureImporter:
       bones: []
       spriteID: 1a1b3d0ba40fcc8f0800000000000000
       internalID: -518775653469539935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 224
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01e73e0d3b5b231f0800000000000000
+      internalID: -1066590377825042928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slime_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b0b503dd8880940800000000000000
+      internalID: 5262606648162847603
       vertices: []
       indices: 
       edges: []
