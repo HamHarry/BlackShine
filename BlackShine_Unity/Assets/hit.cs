@@ -13,5 +13,10 @@ public class hit : MonoBehaviour
         Destroy(effect, 0.2f);
         Destroy(gameObject);
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 0.2f);
+        Destroy(gameObject);
+    }
 }

@@ -24,5 +24,7 @@ public class Shooting : MonoBehaviour
         Rigidbody2D rb = knife.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * knifeForce, ForceMode2D.Impulse);
     }
+
+    
     
 }

@@ -63,6 +63,8 @@
     <Compile Include="Assets\hit.cs" />
     <Compile Include="Assets\Shooting.cs" />
     <Compile Include="Assets\ShootController.cs" />
+    <Compile Include="Assets\Spawn.cs" />
+    <Compile Include="Assets\Damage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

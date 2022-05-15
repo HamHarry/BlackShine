@@ -8,6 +8,8 @@ public class EnemyControllor : MonoBehaviour
     GameObject player;
     Animator anime;
 
+    bool isAlive = true;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -18,7 +20,7 @@ public class EnemyControllor : MonoBehaviour
 
     private void Update()
     {
-        if(player != null)
+        if(player != null && isAlive)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position,speed * Time.deltaTime);
         }
@@ -29,6 +31,8 @@ public class EnemyControllor : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             anime.SetTrigger("Dead");
+            isAlive = false;
+            Destroy(gameObject,0.5f);
         }
     }
 
